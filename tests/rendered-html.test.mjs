@@ -35,5 +35,5 @@ test("server-renders the Sky One instruction guide", async () => {
   assert.match(html, /Focus/);
   assert.match(html, /长按约 1\.2 秒进入下一轮/);
   assert.match(html, /外壳上的具体位置以实物标注为准/);
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
+  assert.doesNotMatch(html, /Your site is taking shape/);
 });

@@ -2,7 +2,11 @@
 
 Sky One 智能眼镜中文使用指南网站。
 
-网站内容包括：
+## 在线访问
+
+https://jayma23.github.io/Seesky-Glasses-Instruction/
+
+## 内容
 
 - 三分钟快速上手
 - 菜单键与确认键说明
@@ -19,10 +23,11 @@ npm install
 npm run dev
 ```
 
-生产构建：
+生产构建与静态导出：
 
 ```bash
-npm run build
+npm run export:static
 ```
 
-主要页面代码位于 `app/page.tsx`，全局样式位于 `app/globals.css`。
+静态文件会生成在 `_site` 目录。推送至 `main` 分支后，GitHub Actions
+会自动发布到 GitHub Pages。
