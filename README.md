@@ -31,3 +31,5 @@ npm run export:static
 
 静态文件会生成在 `_site` 目录。推送至 `main` 分支后，GitHub Actions
 会自动发布到 GitHub Pages。
+
+页面内容以仓库 `main` 分支的当前版本为准。
