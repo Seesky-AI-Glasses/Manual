@@ -53,6 +53,9 @@ for (const entry of await readdir(assetDirectory)) {
 await cp(join(clientDirectory, "images"), join(outputDirectory, "images"), {
   recursive: true,
 });
+await cp(join(root, "public", "qr"), join(outputDirectory, "qr"), {
+  recursive: true,
+});
 await writeFile(join(outputDirectory, "index.html"), html);
 await writeFile(join(outputDirectory, "404.html"), html);
 await writeFile(join(outputDirectory, ".nojekyll"), "");

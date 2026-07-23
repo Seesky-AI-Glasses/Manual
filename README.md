@@ -33,3 +33,16 @@ npm run export:static
 会自动发布到 GitHub Pages。
 
 页面内容以仓库 `main` 分支的当前版本为准。
+
+## 客户扫码二维码
+
+二维码固定指向网站地址，网站内容更新后无需更换二维码：
+
+- PNG：`public/qr/sky-one-guide-qr.png`
+- SVG：`public/qr/sky-one-guide-qr.svg`
+
+重新生成二维码：
+
+```bash
+npm run generate:qr
+```
