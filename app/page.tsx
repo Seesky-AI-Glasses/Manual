@@ -200,7 +200,7 @@ export default function Home() {
                   </div>
                   <h3>充电并开机</h3>
                   <p>
-                    用随附的 USB-C 线充电。充满后，按随附卡片标注的方式打开眼镜。
+                    先把眼镜充满电，然后按随附卡片标注的方式打开眼镜。
                   </p>
                 </li>
                 <li>
@@ -652,7 +652,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / 充电</span>
-                  <p>使用随附的 USB-C 线充电。充电时请不要佩戴眼镜。</p>
+                  <p>充电时请不要佩戴眼镜，充满后再使用。</p>
                 </div>
                 <div>
                   <span>02 / 摄像头</span>
