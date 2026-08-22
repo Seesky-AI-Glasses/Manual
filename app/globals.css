@@ -775,6 +775,18 @@ summary {
   font-weight: 700;
 }
 
+.connect-card li {
+  grid-template-columns: 28px 1fr;
+}
+
+.connect-card li span {
+  font-family: "SFMono-Regular", Consolas, monospace;
+}
+
+.connect-card .control-code {
+  font-size: 12px;
+}
+
 .key-rule {
   display: grid;
   grid-template-columns: 130px 1fr;

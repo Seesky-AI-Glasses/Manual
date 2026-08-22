@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Sky One 智能眼镜使用指南",
   description:
     "Sky One 智能眼镜快速上手、按键说明、AI Camera、Photo、Translate、Focus、Status 与故障排查。",
-  applicationName: "Seesky Glasses Instruction",
+  applicationName: "Sky One Manual",
   keywords: ["Sky One", "Seesky", "智能眼镜", "使用指南", "AI Camera"],
 };
 

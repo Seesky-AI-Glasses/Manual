@@ -5,7 +5,7 @@ import jsQR from "jsqr";
 import { PNG } from "pngjs";
 
 const expectedUrl =
-  "https://jayma23.github.io/Seesky-Glasses-Instruction/";
+  "https://seesky-ai-glasses.github.io/Manual/";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const pngPath = join(root, "public", "qr", "sky-one-guide-qr.png");
 const png = PNG.sync.read(await readFile(pngPath));

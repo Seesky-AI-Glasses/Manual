@@ -6,7 +6,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const outputDirectory = join(root, "_site");
 const clientDirectory = join(root, "dist", "client");
 const assetDirectory = join(clientDirectory, "assets");
-const basePath = process.env.BASE_PATH ?? "/Seesky-Glasses-Instruction";
+const basePath = process.env.BASE_PATH ?? "/Manual";
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(join(outputDirectory, "assets"), { recursive: true });

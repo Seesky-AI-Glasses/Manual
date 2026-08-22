@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import QRCode from "qrcode";
 
 const websiteUrl =
-  "https://jayma23.github.io/Seesky-Glasses-Instruction/";
+  "https://seesky-ai-glasses.github.io/Manual/";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const outputDirectory = join(root, "public", "qr");
 const pngPath = join(outputDirectory, "sky-one-guide-qr.png");
