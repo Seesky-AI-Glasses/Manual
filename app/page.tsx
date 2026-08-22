@@ -212,7 +212,7 @@ export default function Home() {
                   </div>
                   <h3>安装 App 并登录</h3>
                   <p>
-                    在 App Store 或 Google Play 搜索「YIYUN AI Glass」安装。
+                    在 App Store 或 Google Play 搜索「Seesky Glasses」安装。
                     输入邮箱，收到验证码后即可登录，无需设置密码。
                   </p>
                 </li>
