@@ -205,7 +205,7 @@ export default function Home() {
                   </div>
                   <h3>充电并开机</h3>
                   <p>
-                    用任意 USB-C（Type-C）线充电即可，5V、500mA 或 1A 均可，约 1 小时充满。充满后，按随附卡片标注的方式打开眼镜。
+                    用 USB-A 转 USB-C（Type-C）线充电，普通充电头即可，5V、500mA 或 1A 均可，约 1 小时充满。充满后，按随附卡片标注的方式打开眼镜。
                   </p>
                 </li>
                 <li>
@@ -657,7 +657,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / 充电</span>
-                  <p>任意 USB-C（Type-C）线都可以充电，5V、500mA 或 1A 均可，约 1 小时充满。充电时请不要佩戴眼镜。</p>
+                  <p>请用 USB-A 转 USB-C（Type-C）线充电，5V、500mA 或 1A 均可，约 1 小时充满。充电时请不要佩戴眼镜。</p>
                 </div>
                 <div>
                   <span>02 / 摄像头</span>
