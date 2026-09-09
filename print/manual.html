@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Sky One 智能眼镜使用说明</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    color: #1a1f1b;
+    font-size: 10.5pt;
+    line-height: 1.65;
+  }
+  :root { --green: #2f7d4a; --green-soft: #e8f3ec; --line: #d9ded9; --muted: #6a736c; }
+
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* cover */
+  .cover { display: flex; flex-direction: column; height: 257mm; }
+  .cover .brand { font-size: 9pt; letter-spacing: .25em; color: var(--green); font-weight: 700; }
+  .cover h1 { font-size: 30pt; margin: 18mm 0 4mm; line-height: 1.2; letter-spacing: -0.01em; }
+  .cover .sub { font-size: 12pt; color: var(--muted); margin: 0; }
+  .cover .hero { margin: 14mm 0 0; width: 100%; height: 72mm; background: #0b110d; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cover .hero img { width: 88%; height: auto; filter: brightness(.95); }
+  .cover .bottom { margin-top: auto; display: flex; align-items: center; gap: 10mm; padding-top: 8mm; border-top: 1px solid var(--line); }
+  .cover .bottom img { width: 34mm; height: 34mm; }
+  .cover .bottom p { margin: 0; }
+  .cover .bottom strong { display: block; font-size: 11.5pt; margin-bottom: 1.5mm; }
+  .cover .bottom small { color: var(--muted); font-size: 9pt; }
+  .cover .bottom .url { font-family: Menlo, Consolas, monospace; font-size: 9.5pt; color: var(--green); }
+
+  /* sections */
+  h2 { font-size: 16pt; margin: 0 0 2mm; padding-bottom: 2mm; border-bottom: 2px solid var(--green); display: flex; align-items: baseline; gap: 3mm; }
+  h2 .n { font-family: Menlo, Consolas, monospace; font-size: 9pt; color: var(--green); letter-spacing: .1em; }
+  .lede { color: var(--muted); margin: 2mm 0 5mm; }
+  h3 { font-size: 11.5pt; margin: 5mm 0 1.5mm; }
+  p { margin: 0 0 2mm; }
+  ol, ul { margin: 0 0 3mm; padding-left: 5.5mm; }
+  li { margin-bottom: 1mm; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .card { border: 1px solid var(--line); border-radius: 4px; padding: 3mm 4.5mm; background: #fff; break-inside: avoid; }
+  .card h3 { margin-top: 0; }
+  .card .tag { display: inline-block; font-family: Menlo, Consolas, monospace; font-size: 8pt; color: var(--green); background: var(--green-soft); padding: .5mm 2mm; border-radius: 3px; margin-bottom: 2mm; }
+
+  .tip { border-left: 3px solid var(--green); background: var(--green-soft); padding: 2.5mm 4mm; margin: 4mm 0; break-inside: avoid; }
+  .tip strong { color: var(--green); }
+  .warn { border-left: 3px solid #d9a441; background: #fbf3e2; padding: 2.5mm 4mm; margin: 4mm 0; break-inside: avoid; }
+
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 10pt; }
+  th, td { text-align: left; padding: 1.6mm 2.5mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 8.5pt; color: var(--muted); font-weight: 600; letter-spacing: .05em; border-bottom: 1px solid #b9c2ba; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .feature { display: grid; grid-template-columns: 30mm 1fr; gap: 4mm; padding: 2.2mm 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+  .feature:last-of-type { border-bottom: 0; }
+  .feature .name { font-family: Menlo, Consolas, monospace; color: var(--green); font-weight: 700; font-size: 10pt; }
+  .feature .name small { display: block; color: var(--muted); font-family: inherit; font-weight: 400; font-size: 8pt; margin-top: .5mm; }
+  .feature .flow { margin: 0; color: #333; }
+  .feature .flow b { display: inline-block; min-width: 4.2mm; height: 4.2mm; line-height: 4.2mm; text-align: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 7.5pt; margin-right: .5mm; }
+  .feature .flow span { color: #b0b8b1; margin: 0 .5mm; }
+
+  .faq dt { font-weight: 700; margin-top: 3mm; }
+  .faq dd { margin: .5mm 0 0; color: #333; }
+
+  .care { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-top: 4mm; }
+  .care div { border-top: 2px solid var(--green); padding-top: 2mm; }
+  .care strong { display: block; margin-bottom: 1mm; }
+</style>
+</head>
+<body>
+
+<!-- 封面 -->
+<section class="page cover">
+  <div class="brand">SEESKY · SKY ONE</div>
+  <h1>Sky One 智能眼镜<br>使用说明</h1>
+  <p class="sub">用两颗触摸键完成拍照、翻译、AI 分析与信息浏览。从开箱到熟练使用，只需几分钟。</p>
+  <div class="hero"><img src="../public/images/skyone-glasses.jpg" alt="Sky One 智能眼镜"></div>
+  <div class="bottom">
+    <img src="../public/qr/sky-one-guide-qr.png" alt="扫码查看在线说明">
+    <p>
+      <strong>扫码查看完整在线说明</strong>
+      <span class="url">https://seesky-ai-glasses.github.io/Manual/</span><br>
+      <small>在线版本会持续更新，内容以在线版为准。 · 版本 2026.08</small>
+    </p>
+  </div>
+</section>
+
+<!-- 01 快速开始 + 02 连接 -->
+<section class="page">
+  <h2><span class="n">01</span>快速开始</h2>
+  <p class="lede">第一次使用前，请先把眼镜充满电，并在手机上装好配套 App。</p>
+  <div class="cols">
+    <div class="card"><span class="tag">STEP 1</span><h3>充电并开机</h3><p>用任意 USB-C（Type-C）线充电即可，5V、500mA 或 1A 均可，约 1 小时充满。充满后，按随附卡片标注的方式打开眼镜。</p></div>
+    <div class="card"><span class="tag">STEP 2</span><h3>安装 App 并登录</h3><p>在 App Store 或 Google Play 搜索「Seesky Glasses」安装。输入邮箱，收到验证码后即可登录，无需设置密码。</p></div>
+    <div class="card"><span class="tag">STEP 3</span><h3>连接眼镜</h3><p>打开手机蓝牙，在 App 首页连接 Sky One，再给眼镜连上 Wi-Fi。完成后就可以开始拍照和翻译了。</p></div>
+    <div class="warn"><strong>拍照、翻译和 AI 分析需要 Wi-Fi。</strong>眼镜通过 Wi-Fi 把照片发出去处理。没有 Wi-Fi 时，可以打开手机热点让眼镜连接。</div>
+  </div>
+
+  <h2 style="margin-top:8mm"><span class="n">02</span>连接眼镜：先连蓝牙，再连 Wi-Fi</h2>
+  <p class="lede">蓝牙用来让手机和眼镜互相认识；Wi-Fi 用来传照片和拿结果。两步都在手机 App 首页完成。</p>
+  <div class="cols">
+    <div class="card">
+      <span class="tag">A · 蓝牙连接</span>
+      <h3>让手机找到眼镜</h3>
+      <ol>
+        <li>打开眼镜，打开手机蓝牙</li>
+        <li>打开 App，点击首页的「Sky One · 未连接」</li>
+        <li>在列表里选择 Sky One，等待变为「已连接」</li>
+        <li>连上后，首页会显示眼镜电量和版本</li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="tag">B · Wi-Fi 连接</span>
+      <h3>给眼镜连上网</h3>
+      <ol>
+        <li>点击 App 首页的「WiFi」</li>
+        <li>选择类型：普通 WiFi / 手机热点、无密码 WiFi，或校园 WiFi</li>
+        <li>输入手机当前连接的 WiFi 名称和密码，点确认</li>
+        <li>稍等几秒，首页 WiFi 状态变为已连接即可</li>
+      </ol>
+    </div>
+  </div>
+  <div class="tip"><strong>小提示：</strong>眼镜和手机最好连<b>同一个 WiFi</b>。外出时，打开手机热点，把热点名称和密码填进去即可。WiFi 只需设置一次，眼镜会记住。</div>
+</section>
+
+<!-- 03 按键 + 04 功能 -->
+<section class="page">
+  <h2><span class="n">03</span>两颗键，完成所有操作</h2>
+  <p class="lede">菜单键与确认键是镜腿上的两个触摸区域。外壳上的具体位置以实物标注为准。</p>
+  <div class="cols">
+    <div class="card">
+      <span class="tag">M · 菜单键</span>
+      <h3>切换 · 返回 · 向下</h3>
+      <table>
+        <tr><td>主菜单</td><td>短按切换功能</td></tr>
+        <tr><td>确认页 / 错误页 / 状态页</td><td>短按返回主菜单</td></tr>
+        <tr><td>结果页</td><td>短按向下滚动</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="tag">OK · 确认键</span>
+      <h3>打开 · 执行 · 向上</h3>
+      <table>
+        <tr><td>主菜单 / 确认页</td><td>短按打开功能或开始拍照</td></tr>
+        <tr><td>结果页</td><td>短按向上滚动</td></tr>
+        <tr><td>结果页</td><td>长按约 1.2 秒进入下一轮</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="tip"><strong>核心规则：</strong>进入功能后，第一下确认键只是进入确认页，<b>第二下确认键</b>才开始拍照。看完结果后，长按<b>确认键</b>进入下一轮。</div>
+
+  <h2 style="margin-top:5mm"><span class="n">04</span>主菜单的五个功能</h2>
+  <p class="lede">在主菜单短按菜单键移动选择，短按确认键进入当前功能。拍照时请看向目标，保持右上角摄像头无遮挡。</p>
+
+  <div class="feature">
+    <div class="name">AI Camera<small>看见，并理解</small></div>
+    <div><p>拍下眼前画面，AI 会告诉你看到了什么。</p>
+      <p class="flow"><b>1</b> 选择 AI Camera <span>→</span> <b>2</b> 确认进入拍照页 <span>→</span> <b>3</b> 看向目标，再次确认 <span>→</span> <b>4</b> 在眼镜中阅读结果</p></div>
+  </div>
+  <div class="feature">
+    <div class="name">Photo<small>把这一刻传到手机</small></div>
+    <div><p>拍一张照片，自动发送到手机 App，并保存到相册。</p>
+      <p class="flow"><b>1</b> 选择 Photo <span>→</span> <b>2</b> 确认进入拍照页 <span>→</span> <b>3</b> 看向目标，再次确认 <span>→</span> <b>4</b> 在手机 App 相册查看</p></div>
+  </div>
+  <div class="feature">
+    <div class="name">Translate<small>眼前文字，随看随译</small></div>
+    <div><p>对准需要翻译的文字拍一张，译文直接显示在眼镜里。目标语言可在 App 中更改。</p>
+      <p class="flow"><b>1</b> 选择 Translate <span>→</span> <b>2</b> 确认进入翻译页 <span>→</span> <b>3</b> 对准文字，再次确认 <span>→</span> <b>4</b> 滚动阅读译文</p></div>
+  </div>
+  <div class="feature">
+    <div class="name">Focus<small>安静的专注陪伴</small></div>
+    <div><p>在手机 App 开始 Focus，眼镜只在需要时给一句轻提醒。</p>
+      <p class="flow"><b>1</b> 在手机 App 开始 Focus <span>→</span> <b>2</b> 眼镜自动运行 <span>→</span> <b>3</b> 无需任何操作 <span>→</span> <b>4</b> 在手机 App 结束</p></div>
+  </div>
+  <div class="feature">
+    <div class="name">Status<small>连接状态，一眼确认</small></div>
+    <div><p>查看蓝牙、Wi-Fi 和电量。</p>
+      <p class="flow"><b>1</b> 选择 Status <span>→</span> <b>2</b> 确认进入 <span>→</span> <b>3</b> 查看连接与电量 <span>→</span> <b>4</b> 菜单键返回</p></div>
+  </div>
+</section>
+
+<!-- 05 状态 + 06 Focus + 07 更新 -->
+<section class="page">
+  <h2><span class="n">05</span>绿色提示，代表当前状态</h2>
+  <p class="lede">Sky One 的提示会以绿色文字显示在右眼视野里。看到下面这些文字时，按建议操作即可。</p>
+  <table>
+    <tr><th>显示</th><th>含义</th><th>现在怎么做</th></tr>
+    <tr><td>正在拍照</td><td>眼镜正在采集画面</td><td>保持头部稳定</td></tr>
+    <tr><td>正在上传</td><td>照片正在发送</td><td>保持眼镜连着 Wi-Fi</td></tr>
+    <tr><td>正在识别 / 处理中</td><td>AI 正在分析</td><td>稍等片刻，不要连续按键</td></tr>
+    <tr><td>结果页</td><td>分析或翻译已完成</td><td>菜单键向下、确认键向上滚动阅读；长按确认键进入下一轮</td></tr>
+    <tr><td>网络未连接</td><td>眼镜没有连上 Wi-Fi</td><td>在手机 App 重新连接 Wi-Fi</td></tr>
+    <tr><td>电量低</td><td>电量不足</td><td>充电后再继续使用</td></tr>
+  </table>
+
+  <h2 style="margin-top:6mm"><span class="n">06</span>Focus：专注，但不打扰</h2>
+  <p class="lede">Focus 在手机 App 里开始和结束。运行期间你不需要碰眼镜，注意力偏离时，眼镜只会给一句短短的绿色提醒，比如「回到任务」。</p>
+  <ul>
+    <li>开始、暂停、继续与结束都在手机 App 操作；眼镜运行时无需任何操作</li>
+    <li>右下角低亮度呼吸点，表示 Focus 正在运行；视野中下方出现短横线，是温和的注意力提醒</li>
+    <li>没有声音、没有震动，不会打扰身边的人</li>
+    <li>每次专注的时长和总结，在手机 App 里查看</li>
+  </ul>
+
+  <h2 style="margin-top:6mm"><span class="n">07</span>眼镜软件更新</h2>
+  <p class="lede">我们会不定期推送新功能和稳定性修复。有新版本时，连接眼镜后 App 会自动弹出提示。</p>
+  <ol>
+    <li><b>看到「发现新版本」</b>——连接眼镜后 App 首页弹出更新提示。也可以在「设备状态」里手动点「检查更新」。</li>
+    <li><b>点「立即升级」</b>——升级前请确认眼镜电量充足、已连上 Wi-Fi。升级期间保持眼镜开机并靠近手机，不要操作眼镜。</li>
+    <li><b>等待「更新完成」</b>——App 会显示下载、安装进度。看到「更新完成」后，按提示重启一次眼镜即可正常使用。</li>
+  </ol>
+  <div class="tip"><strong>升级失败不用担心：</strong>眼镜会自动恢复到原来的版本，不影响正常使用。稍后重新检查更新再试一次即可。</div>
+</section>
+
+<!-- 08 常见问题 + 保养 -->
+<section class="page">
+  <h2><span class="n">08</span>遇到问题，先看这里</h2>
+  <p class="lede">在眼镜的错误页，短按菜单键返回主菜单，短按确认键重新进入当前功能。大多数问题重启眼镜后都能解决。</p>
+  <dl class="faq">
+    <dt>手机找不到眼镜 / 连不上蓝牙</dt>
+    <dd>确认眼镜已开机、手机蓝牙已打开，并把眼镜放在手机旁边。重启眼镜后，在 App 首页重新点「Sky One」扫描连接。</dd>
+    <dt>眼镜显示「网络未连接」</dt>
+    <dd>在 App 首页点「WiFi」，检查 WiFi 名称和密码是否正确，重新确认一次。如果用的是手机热点，请确认热点已打开。仍然不行时，重启眼镜后再连接一次 WiFi。</dd>
+    <dt>上传失败 / 一直在处理中</dt>
+    <dd>通常是网络不稳定。换一个信号更好的 WiFi 或打开手机热点，然后短按菜单键回到主菜单，重新进入功能再试。</dd>
+    <dt>拍照失败</dt>
+    <dd>返回主菜单后重新进入功能；如果仍然失败，重启眼镜再试。请同时检查摄像头有没有被手指或头发遮住。</dd>
+    <dt>按键没有反应</dt>
+    <dd>拍照、上传、分析过程中眼镜会暂时不响应按键，这是正常的，请等状态结束。如果长时间没有任何显示，可能是电量耗尽，请先充电。</dd>
+    <dt>翻译结果的语言不对</dt>
+    <dd>在手机 App 里修改 Translate 的目标语言，眼镜连接后会自动同步。</dd>
+    <dt>还是解决不了？</dt>
+    <dd>打开 App，在「我的」页面选择「问题上报」，描述遇到的情况，我们会尽快联系你。</dd>
+  </dl>
+
+  <h3 style="margin-top:8mm">日常保养</h3>
+  <div class="care">
+    <div><strong>充电</strong>任意 USB-C（Type-C）线都可以充电，5V、500mA 或 1A 均可，约 1 小时充满。充电时请不要佩戴眼镜。</div>
+    <div><strong>摄像头</strong>摄像头在右镜片外上角。使用时保持无遮挡，定期用柔软的镜布轻轻擦拭。</div>
+    <div><strong>防护</strong>避免进水、摔落和高温暴晒。请勿自行拆卸，也不要插接或拨动镜腿上的非充电接口。</div>
+  </div>
+
+  <div class="tip" style="margin-top:10mm"><strong>在线说明：</strong>https://seesky-ai-glasses.github.io/Manual/ —— 扫封面二维码即可打开，内容持续更新。</div>
+</section>
+
+</body>
+</html>
