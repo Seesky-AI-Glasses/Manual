@@ -1736,3 +1736,10 @@ footer > a {
     background: #f5f5f2;
   }
 }
+
+.cable-figure {
+  display: block;
+  width: min(100%, 250px);
+  margin-top: 24px;
+  color: var(--acid);
+}

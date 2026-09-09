@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CableFigure from "../CableFigure";
 
 export const metadata: Metadata = {
   title: "Sky One Smart Glasses User Guide",
@@ -219,6 +220,7 @@ export default function Home() {
                     hour. Once full, turn the glasses on as shown on the
                     included card.
                   </p>
+                  <CableFigure title="USB-A to USB-C charging cable" />
                 </li>
                 <li>
                   <span className="step-number">02</span>

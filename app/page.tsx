@@ -1,3 +1,5 @@
+import CableFigure from "./CableFigure";
+
 const functions = [
   {
     code: "01",
@@ -207,6 +209,7 @@ export default function Home() {
                   <p>
                     用 USB-A 转 USB-C（Type-C）线充电，普通充电头即可，5V、500mA 或 1A 均可，约 1 小时充满。充满后，按随附卡片标注的方式打开眼镜。
                   </p>
+                  <CableFigure title="USB-A 转 USB-C 充电线示意图" />
                 </li>
                 <li>
                   <span className="step-number">02</span>
