@@ -1,13 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -36,4 +36,15 @@ test("server-renders the Sky One instruction guide", async () => {
   assert.match(html, /长按约 1\.2 秒进入下一轮/);
   assert.match(html, /外壳上的具体位置以实物标注为准/);
   assert.doesNotMatch(html, /Your site is taking shape/);
+});
+
+test("server-renders the English guide at /en", async () => {
+  const response = await render("/en");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Sky One Smart Glasses User Guide<\/title>/i);
+  assert.match(html, /Three steps to get going/);
+  assert.match(html, /Hold about 1\.2 s for the next round/);
+  assert.match(html, /Seesky Glasses/);
 });

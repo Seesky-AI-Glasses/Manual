@@ -16,33 +16,38 @@ const workerUrl = pathToFileURL(workerPath);
 workerUrl.searchParams.set("export", Date.now().toString());
 const { default: worker } = await import(workerUrl.href);
 
-const response = await worker.fetch(
-  new Request("https://example.invalid/", {
-    headers: { accept: "text/html" },
-  }),
-  {
-    ASSETS: {
-      fetch: async () => new Response("Not found", { status: 404 }),
+async function renderRoute(route) {
+  const response = await worker.fetch(
+    new Request(`https://example.invalid${route}`, {
+      headers: { accept: "text/html" },
+    }),
+    {
+      ASSETS: {
+        fetch: async () => new Response("Not found", { status: 404 }),
+      },
     },
-  },
-  {
-    waitUntil() {},
-    passThroughOnException() {},
-  },
-);
+    {
+      waitUntil() {},
+      passThroughOnException() {},
+    },
+  );
 
-if (!response.ok) {
-  throw new Error(`Static render failed with status ${response.status}`);
+  if (!response.ok) {
+    throw new Error(`Static render of ${route} failed with status ${response.status}`);
+  }
+
+  let html = await response.text();
+  return html
+    .replace(/\s*<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/\s*<link\b[^>]*(?:rel=["']modulepreload["']|as=["']script["'])[^>]*>/gi, "")
+    .replaceAll('href="/assets/', `href="${basePath}/assets/`)
+    .replaceAll('src="/assets/', `src="${basePath}/assets/`)
+    .replaceAll('href="/images/', `href="${basePath}/images/`)
+    .replaceAll('src="/images/', `src="${basePath}/images/`);
 }
 
-let html = await response.text();
-html = html
-  .replace(/\s*<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
-  .replace(/\s*<link\b[^>]*(?:rel=["']modulepreload["']|as=["']script["'])[^>]*>/gi, "")
-  .replaceAll('href="/assets/', `href="${basePath}/assets/`)
-  .replaceAll('src="/assets/', `src="${basePath}/assets/`)
-  .replaceAll('href="/images/', `href="${basePath}/images/`)
-  .replaceAll('src="/images/', `src="${basePath}/images/`);
+const homeHtml = await renderRoute("/");
+const enHtml = await renderRoute("/en");
 
 for (const entry of await readdir(assetDirectory)) {
   if (entry.endsWith(".css")) {
@@ -56,8 +61,9 @@ await cp(join(clientDirectory, "images"), join(outputDirectory, "images"), {
 await cp(join(root, "public", "qr"), join(outputDirectory, "qr"), {
   recursive: true,
 });
-await writeFile(join(outputDirectory, "index.html"), html);
-await writeFile(join(outputDirectory, "404.html"), html);
-await writeFile(join(outputDirectory, ".nojekyll"), "");
+await writeFile(join(outputDirectory, "index.html"), homeHtml);
+await writeFile(join(outputDirectory, "404.html"), homeHtml);
+await mkdir(join(outputDirectory, "en"), { recursive: true });
+await writeFile(join(outputDirectory, "en", "index.html"), enHtml);
 
 console.log(`Static site exported to ${outputDirectory}`);

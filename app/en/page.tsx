@@ -1,59 +1,67 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sky One Smart Glasses User Guide",
+  description:
+    "Sky One smart glasses quick start, controls, AI Camera, Photo, Translate, Focus, Status, and troubleshooting.",
+};
+
 const functions = [
   {
     code: "01",
     name: "AI Camera",
-    title: "看见，并理解",
-    description: "拍下眼前画面，AI 会告诉你看到了什么。",
-    steps: ["选择 AI Camera", "确认进入拍照页", "看向目标，再次确认", "在眼镜中阅读结果"],
+    title: "See, and understand",
+    description: "Snap what's in front of you — AI tells you what it sees.",
+    steps: ["Select AI Camera", "Confirm to open the camera", "Look at your target, confirm again", "Read the result in the glasses"],
   },
   {
     code: "02",
     name: "Photo",
-    title: "把这一刻传到手机",
-    description: "拍一张照片，自动发送到手机 App，并保存到相册。",
-    steps: ["选择 Photo", "确认进入拍照页", "看向目标，再次确认", "在手机 App 相册查看"],
+    title: "Send this moment to your phone",
+    description: "Take a photo — it's sent to the phone app and saved to your gallery automatically.",
+    steps: ["Select Photo", "Confirm to open the camera", "Look at your target, confirm again", "View it in the app gallery"],
   },
   {
     code: "03",
     name: "Translate",
-    title: "眼前文字，随看随译",
-    description: "对准需要翻译的文字拍一张，译文直接显示在眼镜里。",
-    steps: ["选择 Translate", "确认进入翻译页", "对准文字，再次确认", "滚动阅读译文"],
+    title: "Translate any text you see",
+    description: "Point at the text and snap — the translation appears right in the glasses.",
+    steps: ["Select Translate", "Confirm to open the translator", "Aim at the text, confirm again", "Scroll to read the translation"],
   },
   {
     code: "04",
     name: "Focus",
-    title: "安静的专注陪伴",
-    description: "在手机 App 开始 Focus，眼镜只在需要时给一句轻提醒。",
-    steps: ["在手机 App 开始 Focus", "眼镜自动运行", "无需任何操作", "在手机 App 结束"],
+    title: "Quiet focus companion",
+    description: "Start Focus in the phone app — the glasses only nudge you when needed.",
+    steps: ["Start Focus in the phone app", "The glasses run on their own", "No action needed", "End it in the phone app"],
   },
   {
     code: "05",
     name: "Status",
-    title: "连接状态，一眼确认",
-    description: "查看蓝牙、Wi-Fi 和电量。",
-    steps: ["选择 Status", "确认进入", "查看连接与电量", "菜单键返回"],
+    title: "Connections at a glance",
+    description: "Check Bluetooth, Wi-Fi, and battery.",
+    steps: ["Select Status", "Confirm to enter", "Check connections and battery", "Menu key to go back"],
   },
 ];
 
 const statusRows = [
-  ["正在拍照", "眼镜正在采集画面", "保持头部稳定"],
-  ["正在上传", "照片正在发送", "保持眼镜连着 Wi-Fi"],
-  ["正在识别 / 处理中", "AI 正在分析", "稍等片刻，不要连续按键"],
-  ["结果页", "分析或翻译已完成", "用两颗键上下滚动阅读"],
-  ["网络未连接", "眼镜没有连上 Wi-Fi", "在手机 App 重新连接 Wi-Fi"],
-  ["电量低", "电量不足", "充电后再继续使用"],
+  ["Taking photo", "The glasses are capturing", "Hold your head steady"],
+  ["Uploading", "The photo is being sent", "Keep the glasses on Wi-Fi"],
+  ["Recognizing / Processing", "AI is analyzing", "Wait a moment — don't press keys repeatedly"],
+  ["Result page", "Analysis or translation is done", "Scroll with the two keys to read"],
+  ["No network", "The glasses aren't on Wi-Fi", "Reconnect Wi-Fi in the phone app"],
+  ["Low battery", "Battery is running low", "Charge before continuing"],
 ];
 
 export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">
-        跳到正文
+        Skip to content
       </a>
 
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="返回页面顶部">
+        <a className="brand" href="#top" aria-label="Back to top">
           <span className="brand-mark" aria-hidden="true">
             S1
           </span>
@@ -62,19 +70,19 @@ export default function Home() {
             <small>SKY ONE GUIDE</small>
           </span>
         </a>
-        <nav className="topnav" aria-label="主要导航">
-          <a href="#quick-start">快速开始</a>
-          <a href="#connect">连接</a>
-          <a href="#controls">按键</a>
-          <a href="#features">功能</a>
-          <a href="#troubleshooting">常见问题</a>
+        <nav className="topnav" aria-label="Main navigation">
+          <a href="#quick-start">Quick Start</a>
+          <a href="#connect">Connect</a>
+          <a href="#controls">Controls</a>
+          <a href="#features">Features</a>
+          <a href="#troubleshooting">FAQ</a>
         </nav>
         <div className="top-action">
-          <a href="en/" lang="en">
-            EN
+          <a href="../" lang="zh-CN">
+            中文
           </a>
           <a href="#quick-start">
-            开始使用
+            Get started
             <span aria-hidden="true"> ↓</span>
           </a>
         </div>
@@ -86,22 +94,22 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow">SEE FURTHER · WORK CONNECTED</p>
             <h1>
-              看见
+              SEE
               <br />
-              <span>更多</span>
+              <span>MORE</span>
             </h1>
-            <p className="hero-subtitle">Sky One 智能眼镜使用指南</p>
+            <p className="hero-subtitle">Sky One Smart Glasses User Guide</p>
             <p className="hero-lede">
-              用两颗触摸键完成拍照、翻译、AI 分析与信息浏览。
-              从开箱到熟练使用，只需几分钟。
+              Photos, translation, AI analysis, and reading — all with two touch
+              keys. From unboxing to fluent use in just a few minutes.
             </p>
             <div className="hero-actions">
               <a className="primary-button" href="#quick-start">
-                3 分钟快速上手
+                3-minute quick start
                 <span aria-hidden="true">↘</span>
               </a>
               <a className="text-link" href="#controls">
-                先认识按键 <span aria-hidden="true">→</span>
+                Meet the controls first <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -112,7 +120,7 @@ export default function Home() {
             <div className="optic-crosshair" aria-hidden="true" />
             <img
               src="/images/skyone-glasses.jpg"
-              alt="黑色 Sky One 智能眼镜产品图"
+              alt="Black Sky One smart glasses product photo"
               width="1070"
               height="635"
             />
@@ -124,44 +132,44 @@ export default function Home() {
             </div>
             <div className="status-chip">
               <i aria-hidden="true" />
-              设备准备就绪
+              READY TO USE
             </div>
           </div>
 
           <div className="hero-meta">
-            <span>2 个触摸键</span>
-            <span>5 个核心功能</span>
-            <span>右眼绿色提示显示</span>
+            <span>2 touch keys</span>
+            <span>5 core features</span>
+            <span>Green display in the right lens</span>
           </div>
         </section>
 
         <div className="manual-layout">
-          <aside className="chapter-rail" aria-label="章节目录">
-            <p>使用手册</p>
+          <aside className="chapter-rail" aria-label="Chapters">
+            <p>USER MANUAL</p>
             <ol>
               <li>
                 <a href="#quick-start">
-                  <span>01</span>快速开始
+                  <span>01</span>Quick Start
                 </a>
               </li>
               <li>
                 <a href="#connect">
-                  <span>02</span>连接眼镜
+                  <span>02</span>Connect
                 </a>
               </li>
               <li>
                 <a href="#controls">
-                  <span>03</span>按键说明
+                  <span>03</span>Controls
                 </a>
               </li>
               <li>
                 <a href="#features">
-                  <span>04</span>五个功能
+                  <span>04</span>Five Features
                 </a>
               </li>
               <li>
                 <a href="#reading">
-                  <span>05</span>结果与状态
+                  <span>05</span>Results &amp; Status
                 </a>
               </li>
               <li>
@@ -171,19 +179,19 @@ export default function Home() {
               </li>
               <li>
                 <a href="#update">
-                  <span>07</span>软件更新
+                  <span>07</span>Software Update
                 </a>
               </li>
               <li>
                 <a href="#troubleshooting">
-                  <span>08</span>常见问题
+                  <span>08</span>FAQ
                 </a>
               </li>
             </ol>
             <div className="rail-note">
               <span aria-hidden="true">●</span>
-              内容持续更新
-              <small>版本 2026.08</small>
+              Continuously updated
+              <small>VERSION 2026.08</small>
             </div>
           </aside>
 
@@ -191,9 +199,10 @@ export default function Home() {
             <section className="manual-section quick-start" id="quick-start">
               <div className="section-heading">
                 <p className="section-index">01 / QUICK START</p>
-                <h2>三步，开始使用</h2>
+                <h2>Three steps to get going</h2>
                 <p>
-                  第一次使用前，请先把眼镜充满电，并在手机上装好配套 App。
+                  Before first use, fully charge the glasses and install the
+                  companion app on your phone.
                 </p>
               </div>
 
@@ -203,9 +212,10 @@ export default function Home() {
                   <div className="step-icon" aria-hidden="true">
                     <span className="power-symbol">⏻</span>
                   </div>
-                  <h3>充电并开机</h3>
+                  <h3>Charge and power on</h3>
                   <p>
-                    先把眼镜充满电，然后按随附卡片标注的方式打开眼镜。
+                    Fully charge the glasses, then turn them on as shown on the
+                    included card.
                   </p>
                 </li>
                 <li>
@@ -215,10 +225,11 @@ export default function Home() {
                     <i />
                     <i />
                   </div>
-                  <h3>安装 App 并登录</h3>
+                  <h3>Install the app and sign in</h3>
                   <p>
-                    在 App Store 或 Google Play 搜索「Seesky Glasses」安装。
-                    输入邮箱，收到验证码后即可登录，无需设置密码。
+                    Search for “Seesky Glasses” on the App Store or Google Play.
+                    Enter your email and the verification code you receive — no
+                    password needed.
                   </p>
                 </li>
                 <li>
@@ -226,10 +237,11 @@ export default function Home() {
                   <div className="step-icon view-icon" aria-hidden="true">
                     <i />
                   </div>
-                  <h3>连接眼镜</h3>
+                  <h3>Connect the glasses</h3>
                   <p>
-                    打开手机蓝牙，在 App 首页连接 Sky One，再给眼镜连上 Wi-Fi。
-                    完成后就可以开始拍照和翻译了。
+                    Turn on your phone’s Bluetooth, connect to Sky One from the
+                    app home screen, then get the glasses on Wi-Fi. You’re ready
+                    to shoot and translate.
                   </p>
                 </li>
               </ol>
@@ -239,9 +251,11 @@ export default function Home() {
                   !
                 </span>
                 <div>
-                  <strong>拍照、翻译和 AI 分析需要 Wi-Fi</strong>
+                  <strong>Photos, translation, and AI analysis need Wi-Fi</strong>
                   <p>
-                    眼镜通过 Wi-Fi 把照片发出去处理。没有 Wi-Fi 时，可以打开手机热点让眼镜连接。
+                    The glasses send photos over Wi-Fi for processing. No Wi-Fi
+                    around? Turn on your phone’s hotspot and connect the glasses
+                    to it.
                   </p>
                 </div>
               </div>
@@ -251,74 +265,77 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="section-index">02 / CONNECT</p>
-                  <h2>先连蓝牙，再连 Wi-Fi</h2>
+                  <h2>Bluetooth first, then Wi-Fi</h2>
                 </div>
                 <p>
-                  蓝牙用来让手机和眼镜互相认识；Wi-Fi 用来传照片和拿结果。两步都在手机 App 首页完成。
+                  Bluetooth introduces your phone and glasses to each other;
+                  Wi-Fi carries photos and results. Both steps happen on the app
+                  home screen.
                 </p>
               </div>
 
               <div className="controls-grid">
-                <article className="control-card control-menu connect-card">
+                <article className="control-card control-menu">
                   <div className="control-top">
                     <span className="control-code">BT</span>
                     <span className="control-signal" aria-hidden="true" />
                   </div>
-                  <p className="control-label">STEP A / 蓝牙连接</p>
-                  <h3>让手机找到眼镜</h3>
+                  <p className="control-label">STEP A / BLUETOOTH</p>
+                  <h3>Let your phone find the glasses</h3>
                   <ul>
                     <li>
                       <span>1</span>
-                      <strong>打开眼镜，打开手机蓝牙</strong>
+                      <strong>Turn on the glasses and your phone’s Bluetooth</strong>
                     </li>
                     <li>
                       <span>2</span>
-                      <strong>打开 App，点击首页的「Sky One · 未连接」</strong>
+                      <strong>Open the app and tap “Sky One · Not connected” on the home screen</strong>
                     </li>
                     <li>
                       <span>3</span>
-                      <strong>在列表里选择 Sky One，等待变为「已连接」</strong>
+                      <strong>Pick Sky One from the list and wait for “Connected”</strong>
                     </li>
                     <li>
                       <span>4</span>
-                      <strong>连上后，首页会显示眼镜电量和版本</strong>
+                      <strong>Once connected, the home screen shows battery and version</strong>
                     </li>
                   </ul>
                 </article>
 
-                <article className="control-card control-confirm connect-card">
+                <article className="control-card control-confirm">
                   <div className="control-top">
                     <span className="control-code">WiFi</span>
                     <span className="control-signal" aria-hidden="true" />
                   </div>
-                  <p className="control-label">STEP B / WI-FI 连接</p>
-                  <h3>给眼镜连上网</h3>
+                  <p className="control-label">STEP B / WI-FI</p>
+                  <h3>Get the glasses online</h3>
                   <ul>
                     <li>
                       <span>1</span>
-                      <strong>点击 App 首页的「WiFi」</strong>
+                      <strong>Tap “WiFi” on the app home screen</strong>
                     </li>
                     <li>
                       <span>2</span>
-                      <strong>选择类型：普通 WiFi / 手机热点、无密码 WiFi，或校园 WiFi</strong>
+                      <strong>Pick the type: regular Wi-Fi / phone hotspot, open Wi-Fi, or campus Wi-Fi</strong>
                     </li>
                     <li>
                       <span>3</span>
-                      <strong>输入手机当前连接的 WiFi 名称和密码，点确认</strong>
+                      <strong>Enter the name and password of the Wi-Fi your phone is on, then confirm</strong>
                     </li>
                     <li>
                       <span>4</span>
-                      <strong>稍等几秒，首页 WiFi 状态变为已连接即可</strong>
+                      <strong>Wait a few seconds until the home screen shows Wi-Fi connected</strong>
                     </li>
                   </ul>
                 </article>
               </div>
 
               <div className="key-rule">
-                <span>小提示</span>
+                <span>TIP</span>
                 <p>
-                  眼镜和手机最好连<strong>同一个 WiFi</strong>。外出时，打开手机热点，把热点名称和密码填进去即可。
-                  WiFi 只需设置一次，眼镜会记住。
+                  Keep the glasses and your phone on the <strong>same Wi-Fi</strong>.
+                  On the go, turn on your phone’s hotspot and enter its name and
+                  password. Wi-Fi only needs to be set once — the glasses remember it.
                 </p>
               </div>
             </section>
@@ -327,10 +344,12 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="section-index">03 / TWO CONTROLS</p>
-                  <h2>两颗键，完成所有操作</h2>
+                  <h2>Two keys do everything</h2>
                 </div>
                 <p>
-                  菜单键与确认键是镜腿上的两个触摸区域。外壳上的具体位置以实物标注为准。
+                  The Menu key and the Action key are two touch areas on the
+                  temples. See the markings on the frame for their exact
+                  positions.
                 </p>
               </div>
 
@@ -340,20 +359,20 @@ export default function Home() {
                     <span className="control-code">M</span>
                     <span className="control-signal" aria-hidden="true" />
                   </div>
-                  <p className="control-label">MENU / 菜单键</p>
-                  <h3>切换 · 返回 · 向下</h3>
+                  <p className="control-label">MENU KEY</p>
+                  <h3>Switch · Back · Down</h3>
                   <ul>
                     <li>
-                      <span>主菜单</span>
-                      <strong>短按切换功能</strong>
+                      <span>Main menu</span>
+                      <strong>Tap to switch features</strong>
                     </li>
                     <li>
-                      <span>确认页 / 错误页 / 状态页</span>
-                      <strong>短按返回主菜单</strong>
+                      <span>Confirm / error / status page</span>
+                      <strong>Tap to return to the main menu</strong>
                     </li>
                     <li>
-                      <span>结果页</span>
-                      <strong>短按向下滚动</strong>
+                      <span>Result page</span>
+                      <strong>Tap to scroll down</strong>
                     </li>
                   </ul>
                 </article>
@@ -363,30 +382,32 @@ export default function Home() {
                     <span className="control-code">OK</span>
                     <span className="control-signal" aria-hidden="true" />
                   </div>
-                  <p className="control-label">ACTION / 确认键</p>
-                  <h3>打开 · 执行 · 向上</h3>
+                  <p className="control-label">ACTION KEY</p>
+                  <h3>Open · Go · Up</h3>
                   <ul>
                     <li>
-                      <span>主菜单 / 确认页</span>
-                      <strong>短按打开功能或开始拍照</strong>
+                      <span>Main menu / confirm page</span>
+                      <strong>Tap to open a feature or take the shot</strong>
                     </li>
                     <li>
-                      <span>结果页</span>
-                      <strong>短按向上滚动</strong>
+                      <span>Result page</span>
+                      <strong>Tap to scroll up</strong>
                     </li>
                     <li>
-                      <span>结果页</span>
-                      <strong>长按约 1.2 秒进入下一轮</strong>
+                      <span>Result page</span>
+                      <strong>Hold about 1.2 s for the next round</strong>
                     </li>
                   </ul>
                 </article>
               </div>
 
               <div className="key-rule">
-                <span>核心规则</span>
+                <span>KEY RULE</span>
                 <p>
-                  进入功能后，第一下确认键只是进入确认页，<strong>第二下确认键</strong>才开始拍照。
-                  看完结果后，长按<strong>确认键</strong>进入下一轮。
+                  After entering a feature, the first Action tap only opens the
+                  confirm page — the <strong>second Action tap</strong> takes the
+                  photo. When you’re done reading, hold the <strong>Action key</strong> for
+                  the next round.
                 </p>
               </div>
             </section>
@@ -395,10 +416,12 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="section-index">04 / FIVE MODES</p>
-                  <h2>主菜单的五个功能</h2>
+                  <h2>Five features on the main menu</h2>
                 </div>
                 <p>
-                  在主菜单短按菜单键移动选择，短按确认键进入当前功能。拍照时请看向目标，保持右上角摄像头无遮挡。
+                  On the main menu, tap the Menu key to move the selection and
+                  the Action key to enter. When shooting, look at your target
+                  and keep the camera in the upper-right corner unblocked.
                 </p>
               </div>
 
@@ -413,7 +436,7 @@ export default function Home() {
                       <h3>{item.title}</h3>
                       <p>{item.description}</p>
                     </div>
-                    <ol className="feature-flow" aria-label={`${item.name} 操作步骤`}>
+                    <ol className="feature-flow" aria-label={`${item.name} steps`}>
                       {item.steps.map((step, index) => (
                         <li key={step}>
                           <span>{index + 1}</span>
@@ -427,8 +450,10 @@ export default function Home() {
 
               <div className="section-heading" style={{ marginTop: 48, marginBottom: 0 }}>
                 <p>
-                  Translate 的目标语言（默认翻译成简体中文）可以在手机 App 里更改，连接眼镜后自动同步。
-                  Photo 拍下的照片会出现在 App 的「相册」里，可以保存到手机。
+                  Translate’s target language (Simplified Chinese by default)
+                  can be changed in the phone app and syncs automatically when
+                  the glasses connect. Photos taken in Photo mode appear in the
+                  app’s Gallery, where you can save them to your phone.
                 </p>
               </div>
             </section>
@@ -436,20 +461,22 @@ export default function Home() {
             <section className="manual-section reading-section" id="reading">
               <div className="section-heading">
                 <p className="section-index">05 / READ THE DISPLAY</p>
-                <h2>绿色提示，代表当前状态</h2>
+                <h2>Green text shows the current state</h2>
                 <p>
-                  Sky One 的提示会以绿色文字显示在右眼视野里。看到下面这些文字时，按建议操作即可。
+                  Sky One’s prompts appear as green text in your right-eye view.
+                  When you see one of these, just follow the suggestion.
                 </p>
               </div>
 
-              <div className="display-demo" aria-label="眼镜结果页操作示意">
+              <div className="display-demo" aria-label="Result page controls demo">
                 <div className="display-screen">
                   <div className="display-header">
                     <span>AI CAMERA / RESULT</span>
                     <span>READY</span>
                   </div>
                   <p>
-                    这是 AI 返回的分析结果。文字较长时，可以使用菜单键和确认键上下滚动阅读。
+                    This is the result returned by AI. For longer text, scroll
+                    up and down with the Menu and Action keys.
                   </p>
                   <div className="display-progress">
                     <i />
@@ -457,25 +484,25 @@ export default function Home() {
                 </div>
                 <div className="display-actions">
                   <div>
-                    <span>菜单键</span>
-                    <strong>向下滚动 ↓</strong>
+                    <span>MENU KEY</span>
+                    <strong>Scroll down ↓</strong>
                   </div>
                   <div>
-                    <span>确认键</span>
-                    <strong>向上滚动 ↑</strong>
+                    <span>ACTION KEY</span>
+                    <strong>Scroll up ↑</strong>
                   </div>
                   <div>
-                    <span>确认键长按</span>
-                    <strong>进入下一轮 ↗</strong>
+                    <span>HOLD ACTION</span>
+                    <strong>Next round ↗</strong>
                   </div>
                 </div>
               </div>
 
-              <div className="status-table" role="table" aria-label="显示状态说明">
+              <div className="status-table" role="table" aria-label="Display states">
                 <div className="status-table-head" role="row">
-                  <span role="columnheader">显示</span>
-                  <span role="columnheader">含义</span>
-                  <span role="columnheader">现在怎么做</span>
+                  <span role="columnheader">Display</span>
+                  <span role="columnheader">Meaning</span>
+                  <span role="columnheader">What to do</span>
                 </div>
                 {statusRows.map(([status, meaning, action]) => (
                   <div className="status-table-row" role="row" key={status}>
@@ -490,21 +517,22 @@ export default function Home() {
             <section className="manual-section focus-section" id="focus">
               <div className="focus-copy">
                 <p className="section-index">06 / FOCUS MODE</p>
-                <h2>专注，但不打扰</h2>
+                <h2>Focused, never intrusive</h2>
                 <p className="focus-lede">
-                  Focus 在手机 App 里开始和结束。运行期间你不需要碰眼镜，
-                  注意力偏离时，眼镜只会给一句短短的绿色提醒，比如「回到任务」。
+                  Focus starts and ends in the phone app. While it runs you
+                  never touch the glasses — if your attention drifts, they show
+                  one short green nudge like “Back to task”.
                 </p>
                 <ul className="focus-rules">
-                  <li>开始、暂停、继续与结束都在手机 App 操作</li>
-                  <li>眼镜运行时无需任何操作</li>
-                  <li>右下角低亮度呼吸点，表示 Focus 正在运行</li>
-                  <li>视野中下方出现短横线，是温和的注意力提醒</li>
-                  <li>没有声音、没有震动，不会打扰身边的人</li>
-                  <li>每次专注的时长和总结，在手机 App 里查看</li>
+                  <li>Start, pause, resume, and end — all in the phone app</li>
+                  <li>No action needed on the glasses while it runs</li>
+                  <li>A dim breathing dot in the lower right means Focus is running</li>
+                  <li>A short line low in your view is a gentle attention nudge</li>
+                  <li>No sound, no vibration — no one around you is disturbed</li>
+                  <li>Session lengths and summaries live in the phone app</li>
                 </ul>
               </div>
-              <div className="focus-visual" aria-label="Focus 绿色显示示意">
+              <div className="focus-visual" aria-label="Focus green display demo">
                 <span className="focus-label">FOCUS / ACTIVE</span>
                 <div className="focus-brackets" aria-hidden="true">
                   <i />
@@ -513,8 +541,8 @@ export default function Home() {
                   <i />
                 </div>
                 <div className="focus-dot" aria-hidden="true" />
-                <p>回到任务</p>
-                <small>低亮度 · 无声音 · 无震动</small>
+                <p>Back to task</p>
+                <small>LOW BRIGHTNESS · NO SOUND · NO VIBRATION</small>
               </div>
             </section>
 
@@ -522,10 +550,12 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="section-index">07 / SOFTWARE UPDATE</p>
-                  <h2>眼镜软件更新</h2>
+                  <h2>Updating the glasses</h2>
                 </div>
                 <p>
-                  我们会不定期推送新功能和稳定性修复。有新版本时，连接眼镜后 App 会自动弹出提示。
+                  We ship new features and stability fixes from time to time.
+                  When a new version is available, the app prompts you after the
+                  glasses connect.
                 </p>
               </div>
 
@@ -535,9 +565,11 @@ export default function Home() {
                   <div className="step-icon" aria-hidden="true">
                     <span className="power-symbol">↓</span>
                   </div>
-                  <h3>看到「发现新版本」</h3>
+                  <h3>See “New version found”</h3>
                   <p>
-                    连接眼镜后，App 首页弹出更新提示。也可以在「设备状态」里手动点「检查更新」。
+                    After connecting, an update prompt appears on the app home
+                    screen. You can also tap “Check for updates” under Device
+                    Status.
                   </p>
                 </li>
                 <li>
@@ -547,9 +579,11 @@ export default function Home() {
                     <i />
                     <i />
                   </div>
-                  <h3>点「立即升级」</h3>
+                  <h3>Tap “Update now”</h3>
                   <p>
-                    升级前请确认眼镜电量充足、已连上 Wi-Fi。升级期间保持眼镜开机并靠近手机，不要操作眼镜。
+                    Make sure the glasses are well charged and on Wi-Fi. During
+                    the update, keep them powered on and near your phone, and
+                    don’t press any keys.
                   </p>
                 </li>
                 <li>
@@ -557,9 +591,11 @@ export default function Home() {
                   <div className="step-icon view-icon" aria-hidden="true">
                     <i />
                   </div>
-                  <h3>等待「更新完成」</h3>
+                  <h3>Wait for “Update complete”</h3>
                   <p>
-                    App 会显示下载、安装进度。看到「更新完成」后，按提示重启一次眼镜即可正常使用。
+                    The app shows download and install progress. When it says
+                    “Update complete”, restart the glasses as prompted and
+                    you’re good to go.
                   </p>
                 </li>
               </ol>
@@ -569,9 +605,11 @@ export default function Home() {
                   !
                 </span>
                 <div>
-                  <strong>升级失败不用担心</strong>
+                  <strong>A failed update is nothing to worry about</strong>
                   <p>
-                    如果升级中途失败，眼镜会自动恢复到原来的版本，不影响正常使用。稍后重新检查更新再试一次即可。
+                    If an update fails midway, the glasses automatically restore
+                    the previous version and keep working normally. Just check
+                    for updates again later.
                   </p>
                 </div>
               </div>
@@ -581,91 +619,117 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="section-index">08 / TROUBLESHOOTING</p>
-                  <h2>遇到问题，先看这里</h2>
+                  <h2>Having trouble? Start here</h2>
                 </div>
                 <p>
-                  在眼镜的错误页，短按菜单键返回主菜单，短按确认键重新进入当前功能。大多数问题重启眼镜后都能解决。
+                  On an error page, tap the Menu key to return to the main menu
+                  or the Action key to retry the current feature. A restart of
+                  the glasses fixes most issues.
                 </p>
               </div>
 
               <div className="faq-list">
                 <details>
                   <summary>
-                    <span>手机找不到眼镜 / 连不上蓝牙</span>
+                    <span>My phone can’t find the glasses / Bluetooth won’t connect</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    确认眼镜已开机、手机蓝牙已打开，并把眼镜放在手机旁边。重启眼镜后，在 App 首页重新点「Sky One」扫描连接。
+                    Make sure the glasses are on, your phone’s Bluetooth is on,
+                    and the glasses are right next to the phone. Restart the
+                    glasses, then tap “Sky One” on the app home screen to scan
+                    and connect again.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>眼镜显示「网络未连接」</span>
+                    <span>The glasses say “No network”</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    在 App 首页点「WiFi」，检查 WiFi 名称和密码是否正确，重新确认一次。如果用的是手机热点，请确认热点已打开。
-                    仍然不行时，重启眼镜后再连接一次 WiFi。
+                    Tap “WiFi” on the app home screen, double-check the Wi-Fi
+                    name and password, and confirm again. If you’re using a
+                    phone hotspot, make sure it’s turned on. Still stuck?
+                    Restart the glasses and set up Wi-Fi once more.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>上传失败 / 一直在处理中</span>
+                    <span>Upload fails / stuck on “Processing”</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    通常是网络不稳定。换一个信号更好的 WiFi 或打开手机热点，然后短按菜单键回到主菜单，重新进入功能再试。
+                    Usually an unstable network. Switch to a stronger Wi-Fi or
+                    turn on your phone’s hotspot, then tap the Menu key to
+                    return to the main menu and try the feature again.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>拍照失败</span>
+                    <span>Photo capture fails</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    返回主菜单后重新进入功能；如果仍然失败，重启眼镜再试。请同时检查摄像头有没有被手指或头发遮住。
+                    Return to the main menu and enter the feature again; if it
+                    still fails, restart the glasses. Also check that the camera
+                    isn’t covered by a finger or hair.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>按键没有反应</span>
+                    <span>The keys don’t respond</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    拍照、上传、分析过程中眼镜会暂时不响应按键，这是正常的，请等状态结束。
-                    如果长时间没有任何显示，可能是电量耗尽，请先充电。
+                    While shooting, uploading, or analyzing, the glasses
+                    temporarily ignore key presses — that’s normal; wait for the
+                    state to finish. If nothing shows for a long time, the
+                    battery may be empty — charge first.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>翻译结果的语言不对</span>
-                    <i aria-hidden="true">+</i>
-                  </summary>
-                  <p>在手机 App 里修改 Translate 的目标语言，眼镜连接后会自动同步。</p>
-                </details>
-                <details>
-                  <summary>
-                    <span>还是解决不了？</span>
+                    <span>The translation comes out in the wrong language</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    打开 App，在「我的」页面选择「问题上报」，描述遇到的情况，我们会尽快联系你。
+                    Change Translate’s target language in the phone app — it
+                    syncs automatically once the glasses connect.
+                  </p>
+                </details>
+                <details>
+                  <summary>
+                    <span>Still stuck?</span>
+                    <i aria-hidden="true">+</i>
+                  </summary>
+                  <p>
+                    Open the app, go to the “Me” page, and choose “Report an
+                    issue”. Describe what happened and we’ll get back to you as
+                    soon as we can.
                   </p>
                 </details>
               </div>
 
               <div className="safety-grid">
                 <div>
-                  <span>01 / 充电</span>
-                  <p>充电时请不要佩戴眼镜，充满后再使用。</p>
+                  <span>01 / CHARGING</span>
+                  <p>Don’t wear the glasses while charging. Charge fully before use.</p>
                 </div>
                 <div>
-                  <span>02 / 摄像头</span>
-                  <p>摄像头在右镜片外上角。使用时保持无遮挡，定期用柔软的镜布轻轻擦拭。</p>
+                  <span>02 / CAMERA</span>
+                  <p>
+                    The camera sits at the outer top corner of the right lens.
+                    Keep it unblocked and wipe it gently with a soft lens cloth
+                    now and then.
+                  </p>
                 </div>
                 <div>
-                  <span>03 / 日常保养</span>
-                  <p>避免进水、摔落和高温暴晒。请勿自行拆卸，也不要插接或拨动镜腿上的非充电接口。</p>
+                  <span>03 / DAILY CARE</span>
+                  <p>
+                    Keep the glasses away from water, drops, and hot sun. Don’t
+                    take them apart, and don’t plug into or poke any port on the
+                    temples other than the charging port.
+                  </p>
                 </div>
               </div>
             </section>
@@ -679,11 +743,11 @@ export default function Home() {
             S1
           </span>
           <p>
-            <strong>Sky One 智能眼镜使用指南</strong>
-            <small>Seesky AI Glasses · 内容持续更新</small>
+            <strong>Sky One Smart Glasses User Guide</strong>
+            <small>Seesky AI Glasses · Continuously updated</small>
           </p>
         </div>
-        <a href="#top">返回顶部 ↑</a>
+        <a href="#top">Back to top ↑</a>
       </footer>
     </>
   );
