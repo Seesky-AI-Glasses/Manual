@@ -214,8 +214,8 @@ export default function Home() {
                   </div>
                   <h3>Charge and power on</h3>
                   <p>
-                    Fully charge the glasses, then turn them on as shown on the
-                    included card.
+                    Charge with any USB-C cable. Once full, turn the glasses on
+                    as shown on the included card.
                   </p>
                 </li>
                 <li>
@@ -713,7 +713,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / CHARGING</span>
-                  <p>Don’t wear the glasses while charging. Charge fully before use.</p>
+                  <p>Any USB-C cable works for charging. Don’t wear the glasses while charging.</p>
                 </div>
                 <div>
                   <span>02 / CAMERA</span>
