@@ -224,8 +224,8 @@ export default function Home() {
                   <p>
                     Charge with a cable that has a regular USB (USB-A) plug on one end
                     and USB-C on the other, using an ordinary phone charger (5V, 500mA
-                    or 1A). A full charge takes about 1 hour. Once full, turn the
-                    glasses on as shown on the included card.
+                    or 1A). A full charge takes about 1 hour. Once full, open the temples and
+                    the glasses turn on; fold them and they turn off.
                   </p>
                   <CableFigure title="USB-A to USB-C charging cable" />
                 </li>
@@ -676,7 +676,8 @@ export default function Home() {
                 </div>
                 <p>
                   On an error page, tap the Action key to retry or the Menu key to
-                  return to the main menu. Restarting the glasses fixes most issues.
+                  return to the main menu. Restarting fixes most issues: fold the
+                  temples, wait a few seconds, then open them again.
                 </p>
               </div>
 
