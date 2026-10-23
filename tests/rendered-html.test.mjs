@@ -33,8 +33,10 @@ test("server-renders the Sky One instruction guide", async () => {
   assert.match(html, /AI Camera/);
   assert.match(html, /Translate/);
   assert.match(html, /Focus/);
-  assert.match(html, /长按约 1\.2 秒进入下一轮/);
-  assert.match(html, /外壳上的具体位置以实物标注为准/);
+  assert.match(html, /长按进入下一轮/);
+  assert.match(html, /电量与充电/);
+  assert.match(html, /skyoneglasses@gmail\.com/);
+  assert.match(html, /具体位置以实物标注为准/);
   assert.doesNotMatch(html, /Your site is taking shape/);
 });
 
@@ -45,6 +47,8 @@ test("server-renders the English guide at /en", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sky One Smart Glasses User Guide<\/title>/i);
   assert.match(html, /Three steps to get going/);
-  assert.match(html, /Hold about 1\.2 s for the next round/);
+  assert.match(html, /Hold for the next round/);
+  assert.match(html, /Battery and charging/);
+  assert.match(html, /skyoneglasses@gmail\.com/);
   assert.match(html, /Seesky Glasses/);
 });

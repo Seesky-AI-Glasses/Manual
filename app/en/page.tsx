@@ -4,42 +4,42 @@ import CableFigure from "../CableFigure";
 export const metadata: Metadata = {
   title: "Sky One Smart Glasses User Guide",
   description:
-    "Sky One smart glasses quick start, controls, AI Camera, Photo, Translate, Focus, Status, and troubleshooting.",
+    "Sky One smart glasses quick start, controls, AI Camera, Photo, Translate, Focus, Status, battery, and troubleshooting.",
 };
 
 const functions = [
   {
     code: "01",
     name: "AI Camera",
-    title: "See, and understand",
-    description: "Snap what's in front of you — AI tells you what it sees.",
-    steps: ["Select AI Camera", "Confirm to open the camera", "Look at your target, confirm again", "Read the result in the glasses"],
+    title: "Solve homework",
+    description: "Snap a worksheet or question and the answer appears in the glasses: key steps and the result for maths and science, scoring points for humanities, and an outline for essays.",
+    steps: ["Select AI Camera", "Confirm to open the camera", "Look at the question, confirm again", "Read the answer in the glasses"],
   },
   {
     code: "02",
     name: "Photo",
-    title: "Send this moment to your phone",
-    description: "Take a photo — it's sent to the phone app and saved to your gallery automatically.",
-    steps: ["Select Photo", "Confirm to open the camera", "Look at your target, confirm again", "View it in the app gallery"],
+    title: "Save photo",
+    description: "Take a photo and send it to your phone, then tap “Save to phone album” in the app’s Photo section. The app keeps only the most recent photo, so save the one you want before taking the next.",
+    steps: ["Select Photo", "Confirm to open the camera", "Look at your target, confirm again", "Save it to your album in the app"],
   },
   {
     code: "03",
     name: "Translate",
-    title: "Translate any text you see",
-    description: "Point at the text and snap — the translation appears right in the glasses.",
+    title: "Translate",
+    description: "Point at the text and snap. The translation appears right in the glasses.",
     steps: ["Select Translate", "Confirm to open the translator", "Aim at the text, confirm again", "Scroll to read the translation"],
   },
   {
     code: "04",
     name: "Focus",
-    title: "Quiet focus companion",
-    description: "Start Focus in the phone app — the glasses only nudge you when needed.",
-    steps: ["Start Focus in the phone app", "The glasses run on their own", "No action needed", "End it in the phone app"],
+    title: "30-min focus",
+    description: "Start Focus in the phone app. The glasses run on their own and only show a short nudge when your attention drifts.",
+    steps: ["Start Focus in the app", "The glasses run on their own", "No action needed", "Ends after 30 minutes"],
   },
   {
     code: "05",
     name: "Status",
-    title: "Connections at a glance",
+    title: "Network & BT",
     description: "Check Bluetooth, Wi-Fi, and battery.",
     steps: ["Select Status", "Confirm to enter", "Check connections and battery", "Menu key to go back"],
   },
@@ -47,11 +47,13 @@ const functions = [
 
 const statusRows = [
   ["Taking photo", "The glasses are capturing", "Hold your head steady"],
-  ["Uploading", "The photo is being sent", "Keep the glasses on Wi-Fi"],
-  ["Recognizing / Processing", "AI is analyzing", "Wait a moment — don't press keys repeatedly"],
-  ["Result page", "Analysis or translation is done", "Scroll with the two keys to read"],
-  ["No network", "The glasses aren't on Wi-Fi", "Reconnect Wi-Fi in the phone app"],
-  ["Low battery", "Battery is running low", "Charge before continuing"],
+  ["Uploading", "The photo is being sent", "Stay within Wi-Fi range"],
+  ["Analysing / Reading", "AI is working on it", "Wait a moment, don’t press keys repeatedly"],
+  ["OK key rearming", "You just pressed OK; the glasses wait for you to let go", "Lift your finger, then press OK again when ready"],
+  ["Wi-Fi not connected", "The glasses aren’t online", "Tap Save & Send for Wi-Fi again in the app; if using a hotspot, make sure it’s on"],
+  ["Upload failed", "Weak network, the photo didn’t go through", "Move closer to the router or hotspot, then press OK to retry"],
+  ["Photo failed", "The shot didn’t work", "Press OK to shoot again; check the camera isn’t covered"],
+  ["Battery low. Charge soon", "About 15% or less", "Charge soon"],
 ];
 
 export default function Home() {
@@ -101,7 +103,7 @@ export default function Home() {
             </h1>
             <p className="hero-subtitle">Sky One Smart Glasses User Guide</p>
             <p className="hero-lede">
-              Photos, translation, AI analysis, and reading — all with two touch
+              Homework help, translation, photos, and focus — all with two touch
               keys. From unboxing to fluent use in just a few minutes.
             </p>
             <div className="hero-actions">
@@ -169,30 +171,35 @@ export default function Home() {
                 </a>
               </li>
               <li>
+                <a href="#battery">
+                  <span>05</span>Battery
+                </a>
+              </li>
+              <li>
                 <a href="#reading">
-                  <span>05</span>Results &amp; Status
+                  <span>06</span>Results &amp; Status
                 </a>
               </li>
               <li>
                 <a href="#focus">
-                  <span>06</span>Focus
+                  <span>07</span>Focus
                 </a>
               </li>
               <li>
                 <a href="#update">
-                  <span>07</span>Software Update
+                  <span>08</span>Software Update
                 </a>
               </li>
               <li>
                 <a href="#troubleshooting">
-                  <span>08</span>FAQ
+                  <span>09</span>FAQ
                 </a>
               </li>
             </ol>
             <div className="rail-note">
               <span aria-hidden="true">●</span>
               Continuously updated
-              <small>VERSION 2026.08</small>
+              <small>VERSION 2026.10</small>
             </div>
           </aside>
 
@@ -215,10 +222,10 @@ export default function Home() {
                   </div>
                   <h3>Charge and power on</h3>
                   <p>
-                    Charge with a USB-A to USB-C cable — any regular charger
-                    works (5V, 500mA or 1A), and a full charge takes about 1
-                    hour. Once full, turn the glasses on as shown on the
-                    included card.
+                    Charge with a cable that has a regular USB (USB-A) plug on one end
+                    and USB-C on the other, using an ordinary phone charger (5V, 500mA
+                    or 1A). A full charge takes about 1 hour. Once full, turn the
+                    glasses on as shown on the included card.
                   </p>
                   <CableFigure title="USB-A to USB-C charging cable" />
                 </li>
@@ -243,9 +250,8 @@ export default function Home() {
                   </div>
                   <h3>Connect the glasses</h3>
                   <p>
-                    Turn on your phone’s Bluetooth, connect to Sky One from the
-                    app home screen, then get the glasses on Wi-Fi. You’re ready
-                    to shoot and translate.
+                    Turn on your phone’s Bluetooth, tap “Connect Sky One” on the app
+                    home screen, then get the glasses on Wi-Fi. That’s it.
                   </p>
                 </li>
               </ol>
@@ -255,7 +261,7 @@ export default function Home() {
                   !
                 </span>
                 <div>
-                  <strong>Photos, translation, and AI analysis need Wi-Fi</strong>
+                  <strong>Homework help, translation, and saving photos need Wi-Fi</strong>
                   <p>
                     The glasses send photos over Wi-Fi for processing. No Wi-Fi
                     around? Turn on your phone’s hotspot and connect the glasses
@@ -293,15 +299,11 @@ export default function Home() {
                     </li>
                     <li>
                       <span>2</span>
-                      <strong>Open the app and tap “Sky One · Not connected” on the home screen</strong>
+                      <strong>Open the app and tap “Connect Sky One” on the home screen</strong>
                     </li>
                     <li>
                       <span>3</span>
                       <strong>Pick Sky One from the list and wait for “Connected”</strong>
-                    </li>
-                    <li>
-                      <span>4</span>
-                      <strong>Once connected, the home screen shows battery and version</strong>
                     </li>
                   </ul>
                 </article>
@@ -324,7 +326,7 @@ export default function Home() {
                     </li>
                     <li>
                       <span>3</span>
-                      <strong>Enter the name and password of the Wi-Fi your phone is on, then confirm</strong>
+                      <strong>Enter the name and password of the Wi-Fi your phone is on, then tap “Save &amp; Send”</strong>
                     </li>
                     <li>
                       <span>4</span>
@@ -338,8 +340,9 @@ export default function Home() {
                 <span>TIP</span>
                 <p>
                   Keep the glasses and your phone on the <strong>same Wi-Fi</strong>.
-                  On the go, turn on your phone’s hotspot and enter its name and
-                  password. Wi-Fi only needs to be set once — the glasses remember it.
+                  When using a hotspot, keep the phone close to the glasses; a stronger
+                  signal means faster uploads. Wi-Fi only needs to be set once, and the
+                  glasses can remember several networks.
                 </p>
               </div>
             </section>
@@ -351,9 +354,9 @@ export default function Home() {
                   <h2>Two keys do everything</h2>
                 </div>
                 <p>
-                  The Menu key and the Action key are two touch areas on the
-                  temples. See the markings on the frame for their exact
-                  positions.
+                  The Menu key and the Action key (OK) are two touch areas on the
+                  temples; see the markings on the frame. A hint line at the bottom of
+                  every screen shows what the two keys do on that page.
                 </p>
               </div>
 
@@ -371,7 +374,7 @@ export default function Home() {
                       <strong>Tap to switch features</strong>
                     </li>
                     <li>
-                      <span>Confirm / error / status page</span>
+                      <span>Camera / error / status page</span>
                       <strong>Tap to return to the main menu</strong>
                     </li>
                     <li>
@@ -390,8 +393,12 @@ export default function Home() {
                   <h3>Open · Go · Up</h3>
                   <ul>
                     <li>
-                      <span>Main menu / confirm page</span>
+                      <span>Main menu / camera page</span>
                       <strong>Tap to open a feature or take the shot</strong>
+                    </li>
+                    <li>
+                      <span>Error page</span>
+                      <strong>Tap to retry</strong>
                     </li>
                     <li>
                       <span>Result page</span>
@@ -399,7 +406,7 @@ export default function Home() {
                     </li>
                     <li>
                       <span>Result page</span>
-                      <strong>Hold about 1.2 s for the next round</strong>
+                      <strong>Hold for the next round</strong>
                     </li>
                   </ul>
                 </article>
@@ -408,8 +415,8 @@ export default function Home() {
               <div className="key-rule">
                 <span>KEY RULE</span>
                 <p>
-                  After entering a feature, the first Action tap only opens the
-                  confirm page — the <strong>second Action tap</strong> takes the
+                  After entering a feature, the first Action tap opens the
+                  camera page, and the <strong>second Action tap</strong> takes the
                   photo. When you’re done reading, hold the <strong>Action key</strong> for
                   the next round.
                 </p>
@@ -423,9 +430,9 @@ export default function Home() {
                   <h2>Five features on the main menu</h2>
                 </div>
                 <p>
-                  On the main menu, tap the Menu key to move the selection and
-                  the Action key to enter. When shooting, look at your target
-                  and keep the camera in the upper-right corner unblocked.
+                  On the main menu, tap the Menu key to step through the five features
+                  and the Action key to enter. When shooting, look at your target and
+                  keep the camera at the upper outer corner of the right lens unblocked.
                 </p>
               </div>
 
@@ -454,17 +461,60 @@ export default function Home() {
 
               <div className="section-heading" style={{ marginTop: 48, marginBottom: 0 }}>
                 <p>
-                  Translate’s target language (Simplified Chinese by default)
-                  can be changed in the phone app and syncs automatically when
-                  the glasses connect. Photos taken in Photo mode appear in the
-                  app’s Gallery, where you can save them to your phone.
+                  AI Camera: in the app’s “AI Study” section you can turn on homework mode
+                  and pick or edit a prompt. It’s saved in the cloud and works even when the
+                  glasses aren’t connected to your phone; tap “Use built-in prompt” to reset.
+                  Translate: in the app’s Translate section, choose “From” (Auto detect,
+                  English, Simplified Chinese, Japanese, Korean) and “To” (Simplified Chinese
+                  or English), then tap “Save and send to glasses”. Other settings under
+                  Me → Account &amp; profile: switch the language (the glasses’ screen text and
+                  AI answers change with it), turn on Incognito mode (new photos and AI
+                  results don’t show on the phone), or delete your account. Me → Device status
+                  shows the connection and the glasses’ software version.
                 </p>
+              </div>
+            </section>
+
+            <section className="manual-section" id="battery">
+              <div className="section-heading split-heading">
+                <div>
+                  <p className="section-index">05 / BATTERY</p>
+                  <h2>Battery and charging</h2>
+                </div>
+                <p>Battery level is shown on the glasses; the phone app doesn’t show it.</p>
+              </div>
+
+              <div className="safety-grid">
+                <div>
+                  <span>Check the level</span>
+                  <p>Open the Status page to see it, for example “Battery 76%”. While the cable is plugged in it shows “--”, which is normal; about half a minute after unplugging, the number appears. Right after power-on it also shows “--” for a moment.</p>
+                </div>
+                <div>
+                  <span>Low-battery notices</span>
+                  <p>At about 15% you’ll see “Battery low. Charge soon”; at about 8%, “Battery very low. Charge now”. The notice repeats every few minutes until you charge.</p>
+                </div>
+                <div>
+                  <span>Charging</span>
+                  <p>Use a USB-A to USB-C cable and an ordinary phone charger; about 1 hour to full. Don’t wear the glasses while charging.</p>
+                </div>
+              </div>
+
+              <div className="notice">
+                <span className="notice-mark" aria-hidden="true">
+                  !
+                </span>
+                <div>
+                  <strong>Charge soon after a low-battery notice; don’t run until it shuts off</strong>
+                  <p>
+                    If the battery is completely empty, the glasses may need to charge for a while before they turn on again. If nothing happens after charging, keep charging for about 30 more minutes and try again.
+                  </p>
+                </div>
               </div>
             </section>
 
             <section className="manual-section reading-section" id="reading">
               <div className="section-heading">
-                <p className="section-index">05 / READ THE DISPLAY</p>
+                <p className="section-index">06 / READ THE DISPLAY</p>
                 <h2>Green text shows the current state</h2>
                 <p>
                   Sky One’s prompts appear as green text in your right-eye view.
@@ -520,20 +570,19 @@ export default function Home() {
 
             <section className="manual-section focus-section" id="focus">
               <div className="focus-copy">
-                <p className="section-index">06 / FOCUS MODE</p>
+                <p className="section-index">07 / FOCUS MODE</p>
                 <h2>Focused, never intrusive</h2>
                 <p className="focus-lede">
-                  Focus starts and ends in the phone app. While it runs you
-                  never touch the glasses — if your attention drifts, they show
-                  one short green nudge like “Back to task”.
+                  Tap “Start 30-min Focus” in the phone app. While it runs you never
+                  touch the glasses; the screen stays quiet and only shows a short green
+                  nudge when your attention drifts.
                 </p>
                 <ul className="focus-rules">
-                  <li>Start, pause, resume, and end — all in the phone app</li>
-                  <li>No action needed on the glasses while it runs</li>
-                  <li>A dim breathing dot in the lower right means Focus is running</li>
-                  <li>A short line low in your view is a gentle attention nudge</li>
+                  <li>30-minute rounds, started in the phone app; you can end early</li>
+                  <li>No action needed on the glasses; it shows only reminders</li>
+                  <li>Looks only at the current frame, no face recognition, no nudge when unsure</li>
                   <li>No sound, no vibration — no one around you is disturbed</li>
-                  <li>Session lengths and summaries live in the phone app</li>
+                  <li>Reminder history, completed rounds, and rewards live in the phone app</li>
                 </ul>
               </div>
               <div className="focus-visual" aria-label="Focus green display demo">
@@ -545,7 +594,7 @@ export default function Home() {
                   <i />
                 </div>
                 <div className="focus-dot" aria-hidden="true" />
-                <p>Back to task</p>
+                <p>Stay focused</p>
                 <small>LOW BRIGHTNESS · NO SOUND · NO VIBRATION</small>
               </div>
             </section>
@@ -553,7 +602,7 @@ export default function Home() {
             <section className="manual-section" id="update">
               <div className="section-heading split-heading">
                 <div>
-                  <p className="section-index">07 / SOFTWARE UPDATE</p>
+                  <p className="section-index">08 / SOFTWARE UPDATE</p>
                   <h2>Updating the glasses</h2>
                 </div>
                 <p>
@@ -571,9 +620,9 @@ export default function Home() {
                   </div>
                   <h3>See “New version found”</h3>
                   <p>
-                    After connecting, an update prompt appears on the app home
-                    screen. You can also tap “Check for updates” under Device
-                    Status.
+                    After connecting, the app shows an update prompt. You can also tap
+                    “Check updates” and “Install update” next to Firmware on the app
+                    home screen.
                   </p>
                 </li>
                 <li>
@@ -585,9 +634,9 @@ export default function Home() {
                   </div>
                   <h3>Tap “Update now”</h3>
                   <p>
-                    Make sure the glasses are well charged and on Wi-Fi. During
-                    the update, keep them powered on and near your phone, and
-                    don’t press any keys.
+                    Make sure the glasses are well charged and on Wi-Fi. During the
+                    update, keep them powered on and near your phone and don’t press
+                    any keys. A brief Bluetooth disconnect along the way is normal.
                   </p>
                 </li>
                 <li>
@@ -622,13 +671,12 @@ export default function Home() {
             <section className="manual-section trouble-section" id="troubleshooting">
               <div className="section-heading split-heading">
                 <div>
-                  <p className="section-index">08 / TROUBLESHOOTING</p>
+                  <p className="section-index">09 / TROUBLESHOOTING</p>
                   <h2>Having trouble? Start here</h2>
                 </div>
                 <p>
-                  On an error page, tap the Menu key to return to the main menu
-                  or the Action key to retry the current feature. A restart of
-                  the glasses fixes most issues.
+                  On an error page, tap the Action key to retry or the Menu key to
+                  return to the main menu. Restarting the glasses fixes most issues.
                 </p>
               </div>
 
@@ -641,31 +689,31 @@ export default function Home() {
                   <p>
                     Make sure the glasses are on, your phone’s Bluetooth is on,
                     and the glasses are right next to the phone. Restart the
-                    glasses, then tap “Sky One” on the app home screen to scan
+                    glasses, then tap “Connect Sky One” on the app home screen
                     and connect again.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>The glasses say “No network”</span>
+                    <span>The glasses say “Wi-Fi not connected”</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    Tap “WiFi” on the app home screen, double-check the Wi-Fi
-                    name and password, and confirm again. If you’re using a
-                    phone hotspot, make sure it’s turned on. Still stuck?
-                    Restart the glasses and set up Wi-Fi once more.
+                    Tap “WiFi” on the app home screen, check the name and password,
+                    and tap Save &amp; Send again. If you’re using a phone hotspot, make
+                    sure it’s on. Still not connected after a minute and a half?
+                    Restart the glasses and try again.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>Upload fails / stuck on “Processing”</span>
+                    <span>Upload fails or takes a long time</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    Usually an unstable network. Switch to a stronger Wi-Fi or
-                    turn on your phone’s hotspot, then tap the Menu key to
-                    return to the main menu and try the feature again.
+                    Usually a weak Wi-Fi signal at the glasses. Move closer to the
+                    router or hotspot and try again; with a hotspot, keep the phone
+                    near the glasses.
                   </p>
                 </details>
                 <details>
@@ -674,21 +722,21 @@ export default function Home() {
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    Return to the main menu and enter the feature again; if it
+                    Press the Action key on the error page to shoot again; if it
                     still fails, restart the glasses. Also check that the camera
                     isn’t covered by a finger or hair.
                   </p>
                 </details>
                 <details>
                   <summary>
-                    <span>The keys don’t respond</span>
+                    <span>The keys don’t respond / the screen is dark</span>
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
                     While shooting, uploading, or analyzing, the glasses
                     temporarily ignore key presses — that’s normal; wait for the
-                    state to finish. If nothing shows for a long time, the
-                    battery may be empty — charge first.
+                    state to finish. If the screen is completely dark, the battery
+                    may be empty — charge for about 30 minutes first.
                   </p>
                 </details>
                 <details>
@@ -697,8 +745,29 @@ export default function Home() {
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    Change Translate’s target language in the phone app — it
-                    syncs automatically once the glasses connect.
+                    Choose “To” again in the app’s Translate section and tap
+                    “Save and send to glasses”.
+                    </p>
+                    </details>
+                    <details>
+                      <summary>
+                        <span>I took a Photo but can’t see it on my phone</span>
+                        <i aria-hidden="true">+</i>
+                      </summary>
+                      <p>
+                        Make sure the app is signed in, the glasses are on Wi-Fi, and
+                        Incognito mode is off. The app only shows the most recent photo;
+                        earlier ones you didn’t save aren’t kept in the app.
+                      </p>
+                    </details>
+                    <details>
+                      <summary>
+                        <span>The battery always shows “--”</span>
+                        <i aria-hidden="true">+</i>
+                      </summary>
+                      <p>
+                        That’s normal while the cable is plugged in. Unplug and wait about
+                        half a minute for the number.
                   </p>
                 </details>
                 <details>
@@ -707,9 +776,8 @@ export default function Home() {
                     <i aria-hidden="true">+</i>
                   </summary>
                   <p>
-                    Open the app, go to the “Me” page, and choose “Report an
-                    issue”. Describe what happened and we’ll get back to you as
-                    soon as we can.
+                    Email skyoneglasses@gmail.com and describe what happened. We’ll
+                    get back to you as soon as we can.
                   </p>
                 </details>
               </div>
@@ -717,7 +785,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / CHARGING</span>
-                  <p>Charge with a USB-A to USB-C cable — 5V at 500mA or 1A, about 1 hour to full. Don’t wear the glasses while charging.</p>
+                  <p>Charge with a USB-A to USB-C cable and an ordinary phone charger — 5V at 500mA or 1A, about 1 hour to full. Don’t wear the glasses while charging.</p>
                 </div>
                 <div>
                   <span>02 / CAMERA</span>
