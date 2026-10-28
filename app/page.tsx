@@ -214,9 +214,9 @@ export default function Home() {
                   </div>
                   <h3>充电并开机</h3>
                   <p>
-                    用一头是普通 USB 口（USB-A）、一头是 USB-C 的线，接手机充电头充电，5V、500mA 或 1A 均可，约 1 小时充满。充满后，张开镜腿就会自动开机，合上镜腿自动关机。
+                    只能用一头是普通 USB 口（USB-A）、一头是 USB-C 的线，接手机充电头充电，5V、500mA 或 1A 均可，约 1 小时充满。不要用两头都是 USB-C 的线（Type-C 转 Type-C），眼镜不支持用这种线充电。充满后，张开镜腿就会自动开机，合上镜腿自动关机。
                   </p>
-                  <CableFigure title="USB-A 转 USB-C 充电线示意图" />
+                  <CableFigure okLabel="可以：USB-A 转 USB-C" noLabel="不能：USB-C 转 USB-C（两头都是这种口，如苹果 USB-C 充电线）" okAlt="一头 USB-A、一头 USB-C 的充电线照片" noAlt="苹果白色 USB-C 充电线的 USB-C 插头照片" credit="下图照片：" />
                 </li>
                 <li>
                   <span className="step-number">02</span>
@@ -464,7 +464,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span>充电</span>
-                  <p>用 USB-A 转 USB-C 的线和普通手机充电头，约 1 小时充满。充电时请不要佩戴眼镜。</p>
+                  <p>只能用 USB-A 转 USB-C 的线和普通手机充电头，约 1 小时充满。不要用 Type-C 转 Type-C 的线。充电时请不要佩戴眼镜。</p>
                 </div>
               </div>
 
@@ -720,7 +720,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / 充电</span>
-                  <p>请用 USB-A 转 USB-C（Type-C）线和普通手机充电头充电，5V、500mA 或 1A 均可，约 1 小时充满。充电时请不要佩戴眼镜。</p>
+                  <p>只能用 USB-A 转 USB-C（Type-C）线和普通手机充电头充电，不要用 Type-C 转 Type-C 的线。5V、500mA 或 1A 均可，约 1 小时充满。充电时请不要佩戴眼镜。</p>
                 </div>
                 <div>
                   <span>02 / 摄像头</span>

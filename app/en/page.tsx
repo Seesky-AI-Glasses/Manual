@@ -222,12 +222,13 @@ export default function Home() {
                   </div>
                   <h3>Charge and power on</h3>
                   <p>
-                    Charge with a cable that has a regular USB (USB-A) plug on one end
+                    Charge only with a cable that has a regular USB (USB-A) plug on one end
                     and USB-C on the other, using an ordinary phone charger (5V, 500mA
-                    or 1A). A full charge takes about 1 hour. Once full, open the temples and
+                    or 1A). A full charge takes about 1 hour. Don’t use a cable with USB-C
+                    on both ends (USB-C to USB-C) — the glasses can’t charge with it. Once full, open the temples and
                     the glasses turn on; fold them and they turn off.
                   </p>
-                  <CableFigure title="USB-A to USB-C charging cable" />
+                  <CableFigure okLabel="Works: USB-A to USB-C" noLabel="Won’t work: USB-C to USB-C (both ends look like this, e.g. Apple’s USB-C cable)" okAlt="Photo of a cable with USB-A on one end and USB-C on the other" noAlt="Photo of the USB-C plug on Apple’s white USB-C cable" credit="Lower photo:" />
                 </li>
                 <li>
                   <span className="step-number">02</span>
@@ -495,7 +496,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span>Charging</span>
-                  <p>Use a USB-A to USB-C cable and an ordinary phone charger; about 1 hour to full. Don’t wear the glasses while charging.</p>
+                  <p>Use only a USB-A to USB-C cable and an ordinary phone charger; about 1 hour to full. A USB-C to USB-C cable won’t work. Don’t wear the glasses while charging.</p>
                 </div>
               </div>
 
@@ -786,7 +787,7 @@ export default function Home() {
               <div className="safety-grid">
                 <div>
                   <span>01 / CHARGING</span>
-                  <p>Charge with a USB-A to USB-C cable and an ordinary phone charger — 5V at 500mA or 1A, about 1 hour to full. Don’t wear the glasses while charging.</p>
+                  <p>Charge only with a USB-A to USB-C cable (not USB-C to USB-C) and an ordinary phone charger — 5V at 500mA or 1A, about 1 hour to full. Don’t wear the glasses while charging.</p>
                 </div>
                 <div>
                   <span>02 / CAMERA</span>

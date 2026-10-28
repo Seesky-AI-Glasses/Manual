@@ -36,6 +36,7 @@ test("server-renders the Sky One instruction guide", async () => {
   assert.match(html, /长按进入下一轮/);
   assert.match(html, /电量与充电/);
   assert.match(html, /张开镜腿就会自动开机/);
+  assert.match(html, /不要用两头都是 USB-C 的线（Type-C 转 Type-C）/);
   assert.match(html, /skyoneglasses@gmail\.com/);
   assert.match(html, /具体位置以实物标注为准/);
   assert.doesNotMatch(html, /Your site is taking shape/);
@@ -51,6 +52,7 @@ test("server-renders the English guide at /en", async () => {
   assert.match(html, /Hold for the next round/);
   assert.match(html, /Battery and charging/);
   assert.match(html, /open the temples/);
+  assert.match(html, /Don’t use a cable with USB-C\s+on both ends/);
   assert.match(html, /skyoneglasses@gmail\.com/);
   assert.match(html, /Seesky Glasses/);
 });

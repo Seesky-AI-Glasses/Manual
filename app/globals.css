@@ -1738,8 +1738,46 @@ footer > a {
 }
 
 .cable-figure {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 360px);
+  margin: 24px 0 0;
+}
+
+.cable-photo {
+  border: 2px solid var(--acid);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cable-photo.cable-no {
+  border-color: #ff5a4f;
+}
+
+.cable-photo img {
   display: block;
-  width: min(100%, 250px);
-  margin-top: 24px;
+  width: 100%;
+  height: auto;
+}
+
+.cable-photo figcaption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-weight: 600;
   color: var(--acid);
+}
+
+.cable-no figcaption {
+  color: #ff5a4f;
+}
+
+.cable-figure small {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.cable-figure small a {
+  color: inherit;
 }
